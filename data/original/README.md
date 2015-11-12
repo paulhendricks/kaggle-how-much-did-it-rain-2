@@ -1,6 +1,6 @@
 ## Data: Original
 
-he training data consists of NEXRAD and MADIS data collected on 20 days between Apr and Aug 2014 over midwestern corn-growing states. Time and location information have been censored, and the data have been shuffled so that they are not ordered by time or place. The test data consists of data from the same radars and gauges over the remaining days in that month. Please see this page to understand more about polarimetric radar measurements.
+The training data consists of NEXRAD and MADIS data collected on 20 days between Apr and Aug 2014 over midwestern corn-growing states. Time and location information have been censored, and the data have been shuffled so that they are not ordered by time or place. The test data consists of data from the same radars and gauges over the remaining days in that month. Please see this page to understand more about polarimetric radar measurements.
 File descriptions
 
     train.zip - the training set.  This consists of radar observations at gauges in the Midwestern US over 20 days each month during the corn growing season. You are also provided the gauge observation at the end of each hour.
