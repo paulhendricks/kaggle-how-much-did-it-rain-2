@@ -9,3 +9,5 @@ data/original/.DS_Store
 venv/
 data/original/train.csv
 data/original/test.csv
+data/prepped/train.csv
+data/prepped/test.csv
