@@ -11,3 +11,4 @@ data/original/train.csv
 data/original/test.csv
 data/prepped/train.csv
 data/prepped/test.csv
+munge/log
