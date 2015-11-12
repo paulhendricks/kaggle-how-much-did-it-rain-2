@@ -13,8 +13,7 @@ library(data.table)
 library(Metrics)
 ## use data table to only read the Estimated, Ref, and Id fields
 print(paste("reading training file:",Sys.time()))
-train<-fread("../data/prepped/train.csv",select=c(1,4,24))
-colnames(train)[1] <- "Id"
+train<-fread("../data/prepped/train.csv")
 print(paste("calculate median:",Sys.time()))
 ## obtain the median
 ##  * count the records and the NAs, so we can remove them
@@ -33,8 +32,8 @@ mae(idAggregations[,target],singleEstimateById)
 
 print(paste("reading submission file:",Sys.time()))
 ## create a submission with this estimate
-submission<-fread("../input/sample_solution.csv")
+submission<-fread("../data/original/sample_solution.csv")
 submission$Expected<-singleEstimateById
 print(paste("writing predictions:",Sys.time()))
-write.csv(submission,"submission-median.csv",row.names=F)
+write.csv(submission,"../data/prepped/submission-median.csv",row.names=F)
 print(paste("all done:",Sys.time()))
