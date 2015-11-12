@@ -1,33 +1,46 @@
 ## [Kaggle: How Much Did It Rain? II](https://www.kaggle.com/c/how-much-did-it-rain-ii)
 
-[![Build Status](https://travis-ci.org/paulhendricks/kaggle-how-much-did-it-rain-2.svg)](https://travis-ci.org/paulhendricks/kaggle-how-much-did-it-rain-2)
+he training data consists of NEXRAD and MADIS data collected on 20 days between Apr and Aug 2014 over midwestern corn-growing states. Time and location information have been censored, and the data have been shuffled so that they are not ordered by time or place. The test data consists of data from the same radars and gauges over the remaining days in that month. Please see this page to understand more about polarimetric radar measurements.
+File descriptions
 
-This is a project to learn more about [time series forecasting](https://en.wikipedia.org/wiki/Time_series) for store sales.
+    train.zip - the training set.  This consists of radar observations at gauges in the Midwestern US over 20 days each month during the corn growing season. You are also provided the gauge observation at the end of each hour.
+    test.zip - the test set.  This consists of radar observations at gauges in the Midwestern US over the remaining 10/11 days each month of the same year(s) as the training set.  You are required to predict the gauge observation at the end of each hour.
+    sample_solution.zip - a sample submission file in the correct format
+    sample_dask.py - Example program in Python that will produce the sample submission file.  This program applies the Marshall-Palmer relationship to the radar observations to predict the gauge observation.
 
-### Description
+Data columns
 
+To understand the data, you have to realize that there are multiple radar observations over the course of an hour, and only one gauge observation (the 'Expected'). That is why there are multiple rows with the same 'Id'.
 
-Predict hourly rainfall using data from polarimetric radars
+The columns in the datasets are:
 
-After incorporating feedback from the Kaggle community, as well as scientific and educational partners, the Artificial Intelligence Committee of the American Meteorological Society is excited to be running a second iteration of the How Much Did It Rain? competition.
+    Id:  A unique number for the set of observations over an hour at a gauge.
+    minutes_past:  For each set of radar observations, the minutes past the top of the hour that the radar observations were carried out.  Radar observations are snapshots at that point in time.
+    radardist_km:  Distance of gauge from the radar whose observations are being reported.
+    Ref:  Radar reflectivity in km
+    Ref_5x5_10th:   10th percentile of reflectivity values in 5x5 neighborhood around the gauge.
+    Ref_5x5_50th:   50th percentile
+    Ref_5x5_90th:   90th percentile
+    RefComposite:  Maximum reflectivity in the vertical column above gauge.  In dBZ.
+    RefComposite_5x5_10th
+    RefComposite_5x5_50th
+    RefComposite_5x5_90th
+    RhoHV:  Correlation coefficient (unitless)
+    RhoHV_5x5_10th
+    RhoHV_5x5_50th
+    RhoHV_5x5_90th
+    Zdr:    Differential reflectivity in dB
+    Zdr_5x5_10th
+    Zdr_5x5_50th
+    Zdr_5x5_90th
+    Kdp:  Specific differential phase (deg/km)
+    Kdp_5x5_10th
+    Kdp_5x5_50th
+    Kdp_5x5_90th
+    Expected:  Actual gauge observation in mm at the end of the hour.
 
-How Much Did It Rain? II is focused on solving the same core rain measurement prediction problem, but approaches it with a new and improved dataset and evaluation metric. This competition will go even further towards building a useful educational tool for universities, as well as making a meaningful contribution to continued meteorological research.
-Competition Description
+Referencing this data
 
-Rainfall is highly variable across space and time, making it notoriously tricky to measure. Rain gauges can be an effective measurement tool for a specific location, but it is impossible to have them everywhere. In order to have widespread coverage, data from weather radars is used to estimate rainfall nationwide. Unfortunately, these predictions never exactly match the measurements taken using rain gauges.
+To reference this dataset in scientific publications, please use the following citation:
 
-Recently, in an effort to improve their rainfall predictors, the U.S. National Weather Service upgraded their radar network to be polarimetric. These polarimetric radars are able to provide higher quality data than conventional Doppler radars because they transmit radio wave pulses with both horizontal and vertical orientations. 
-
-Polarimetric radar. Image courtesy NOAA
-
-Dual pulses make it easier to infer the size and type of precipitation because rain drops become flatter as they increase in size, whereas ice crystals tend to be elongated vertically.
-
-In this competition, you are given snapshots of polarimetric radar values and asked to predict the hourly rain gauge total. A word of caution: many of the gauge values in the training dataset are implausible (gauges may get clogged, for example). More details are on the data page.
-Acknowledgements
-
-This competition is sponsored by the Artificial Intelligence Committee of the American Meteorological Society. Climate Corporation is providing the prize pool.
-
-* Started: 9:53 pm, Thursday 17 September 2015 UTC
-* Ends: 11:59 pm, Monday 7 December 2015 UTC (81 total days)
-* Points: this competition awards standard ranking points
-* Tiers: this competition counts towards tiers
+Lakshmanan, V, A. Kleeman, J. Boshard, R. Minkowsky, A. Pasch, 2015. The AMS-AI 2015-2016 Contest: Probabilistic estimate of hourly rainfall from radar. 13th Conference on Artificial Intelligence, American Meteorological Society, Phoenix, AZ
