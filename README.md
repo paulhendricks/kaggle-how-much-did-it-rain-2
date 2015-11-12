@@ -1,19 +1,33 @@
-## [Kaggle: Rossmann Store Sales](https://www.kaggle.com/c/rossmann-store-sales)
+## [Kaggle: How Much Did It Rain? II](https://www.kaggle.com/c/how-much-did-it-rain-ii)
 
-[![Build Status](https://travis-ci.org/paulhendricks/kaggle-rossmann-store-sales.svg)](https://travis-ci.org/paulhendricks/kaggle-rossmann-store-sales)
+[![Build Status](https://travis-ci.org/paulhendricks/kaggle-how-much-did-it-rain-2.svg)](https://travis-ci.org/paulhendricks/kaggle-how-much-did-it-rain-2)
 
 This is a project to learn more about [time series forecasting](https://en.wikipedia.org/wiki/Time_series) for store sales.
 
 ### Description
 
- Forecast sales using store, promotion, and competitor data
 
-Rossmann operates over 3,000 drug stores in 7 European countries. Currently,
-Rossmann store managers are tasked with predicting their daily sales for up to six weeks in advance. Store sales are influenced by many factors, including promotions, competition, school and state holidays, seasonality, and locality. With thousands of individual managers predicting sales based on their unique circumstances, the accuracy of results can be quite varied.
+Predict hourly rainfall using data from polarimetric radars
 
-In their first Kaggle competition, Rossmann is challenging you to predict 6 weeks of daily sales for 1,115 stores located across Germany. Reliable sales forecasts enable store managers to create effective staff schedules that increase productivity and motivation. By helping Rossmann create a robust prediction model, you will help store managers stay focused on what’s most important to them: their customers and their teams! 
+After incorporating feedback from the Kaggle community, as well as scientific and educational partners, the Artificial Intelligence Committee of the American Meteorological Society is excited to be running a second iteration of the How Much Did It Rain? competition.
 
-* Started: 12:02 pm, Wednesday 30 September 2015 UTC
-* Ends: 11:59 pm, Monday 14 December 2015 UTC (75 total days)
+How Much Did It Rain? II is focused on solving the same core rain measurement prediction problem, but approaches it with a new and improved dataset and evaluation metric. This competition will go even further towards building a useful educational tool for universities, as well as making a meaningful contribution to continued meteorological research.
+Competition Description
+
+Rainfall is highly variable across space and time, making it notoriously tricky to measure. Rain gauges can be an effective measurement tool for a specific location, but it is impossible to have them everywhere. In order to have widespread coverage, data from weather radars is used to estimate rainfall nationwide. Unfortunately, these predictions never exactly match the measurements taken using rain gauges.
+
+Recently, in an effort to improve their rainfall predictors, the U.S. National Weather Service upgraded their radar network to be polarimetric. These polarimetric radars are able to provide higher quality data than conventional Doppler radars because they transmit radio wave pulses with both horizontal and vertical orientations. 
+
+Polarimetric radar. Image courtesy NOAA
+
+Dual pulses make it easier to infer the size and type of precipitation because rain drops become flatter as they increase in size, whereas ice crystals tend to be elongated vertically.
+
+In this competition, you are given snapshots of polarimetric radar values and asked to predict the hourly rain gauge total. A word of caution: many of the gauge values in the training dataset are implausible (gauges may get clogged, for example). More details are on the data page.
+Acknowledgements
+
+This competition is sponsored by the Artificial Intelligence Committee of the American Meteorological Society. Climate Corporation is providing the prize pool.
+
+* Started: 9:53 pm, Thursday 17 September 2015 UTC
+* Ends: 11:59 pm, Monday 7 December 2015 UTC (81 total days)
 * Points: this competition awards standard ranking points
-* Tiers: this competition counts towards tiers 
+* Tiers: this competition counts towards tiers
